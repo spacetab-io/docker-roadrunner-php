@@ -29,7 +29,7 @@ With xdebug:
 ```Dockerfile
 FROM spacetabio/roadrunner-alpine:7.4-base-1.0.0
 
-COPY * /app
+COPY . /app
 
 # rr is pre installed but config should be provided by application. 
 CMD ["rr serve", "-c", ".rr.yaml"]
