@@ -8,12 +8,18 @@ Docker image configured for <a href="https://roadrunner.dev/">roadrunner</a> in 
 
 ## Docker images
 
+* `spacetabio/roadrunner-alpine:7.3-base-1.0.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.3-base-1.0.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.3-base-1.0.0?style=flat-square)
 * `spacetabio/roadrunner-alpine:7.4-base-1.0.0` – Simple image with PHP and pre-installed extensions. <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.0.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.0.0?style=flat-square)
 
 With xdebug:
 
+* `spacetabio/roadrunner-alpine:7.3-base-xdebug-1.0.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.3-base-1.0.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.3-base-xdebug-1.0.0?style=flat-square)
 * `spacetabio/roadrunner-alpine:7.4-base-xdebug-1.0.0` – Simple image with PHP and pre-installed extensions. <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.0.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-xdebug-1.0.0?style=flat-square)
