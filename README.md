@@ -86,7 +86,7 @@ Format: `{phpVersion}-{imageType}-{semverImageVersion}`
 
 Map:
  - Image tag `*-1.1.0` contains RoadRunner `1.8.0`. 
-
+ - Image tag `*-1.0.0` contains RoadRunner `1.8.0`. 
 
 ## Changelog
 
