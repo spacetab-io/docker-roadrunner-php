@@ -4,7 +4,7 @@ RUN apk add --update --no-cache pcre icu yaml libuv libpng libjpeg libexif \
     && apk add --update --no-cache --virtual build-dependencies \
        autoconf g++ libtool pcre make icu-dev postgresql-dev \
 	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev libexif-dev libpng-dev \
-	&& docker-php-ext-configure gd --with-jpeg \
+	&& docker-php-ext-configure gd --with-jpeg-dir=/usr \
 	&& docker-php-ext-configure opcache --enable-opcache \
 	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql sockets exif \
     && pecl install yaml \

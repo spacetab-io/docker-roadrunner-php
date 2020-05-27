@@ -1,4 +1,4 @@
-VERSION = 1.0.0
+VERSION = 1.1.0
 PUSH = false
 
 alpine-base73: NAME = spacetabio/roadrunner-alpine:7.3-base
