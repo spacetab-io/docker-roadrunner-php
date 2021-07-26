@@ -1934,3 +1934,11 @@ opcache.file_cache_only=$PHP_OPCACHE_FILE_CACHE_ONLY
 ; Local Variables:
 ; tab-width: 4
 ; End:
+
+[ffi]
+; FFI API restriction. Possible values:
+; "preload" - enabled in CLI scripts and preloaded files (default)
+; "false"   - always disabled
+; "true"    - always enabled
+ffi.enable=$PHP_FFI_ENABLE
+ffi.preload=$PHP_FFI_PRELOAD

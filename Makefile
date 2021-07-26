@@ -1,19 +1,5 @@
-VERSION = 1.2.0
+VERSION = 1.3.0
 PUSH = false
-
-alpine-base73: NAME = spacetabio/roadrunner-alpine:7.3-base
-alpine-base73:
-	docker build -f "base/7.3/alpine.dockerfile" -t $(NAME)-$(VERSION) .
-	@if [ "${PUSH}" == 'true' ]; then \
-	    docker push $(NAME)-$(VERSION) ; \
-	fi
-
-alpine-base-xdebug73: NAME = spacetabio/roadrunner-alpine:7.3-base-xdebug
-alpine-base-xdebug73:
-	docker build -f "base-xdebug/7.3/alpine.dockerfile" -t $(NAME)-$(VERSION) .
-	@if [ "${PUSH}" == 'true' ]; then \
-	    docker push $(NAME)-$(VERSION) ; \
-	fi
 
 alpine-base74: NAME = spacetabio/roadrunner-alpine:7.4-base
 alpine-base74:
@@ -29,7 +15,21 @@ alpine-base-xdebug74:
 	    docker push $(NAME)-$(VERSION) ; \
 	fi
 
-base73: alpine-base73 alpine-base-xdebug73
-base74: alpine-base74 alpine-base-xdebug74
+alpine-base80: NAME = spacetabio/roadrunner-alpine:8.0-base
+alpine-base80:
+	docker build -f "base/8.0/alpine.dockerfile" -t $(NAME)-$(VERSION) .
+	@if [ "${PUSH}" == 'true' ]; then \
+	    docker push $(NAME)-$(VERSION) ; \
+	fi
 
-all: base73 base74
+alpine-base-xdebug80: NAME = spacetabio/roadrunner-alpine:8.0-base-xdebug
+alpine-base-xdebug80:
+	docker build -f "base-xdebug/8.0/alpine.dockerfile" -t $(NAME)-$(VERSION) .
+	@if [ "${PUSH}" == 'true' ]; then \
+	    docker push $(NAME)-$(VERSION) ; \
+	fi
+
+base74: alpine-base74 alpine-base-xdebug74
+base80: alpine-base80 alpine-base-xdebug80
+
+all: base74 base80
