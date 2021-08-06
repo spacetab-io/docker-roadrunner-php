@@ -8,31 +8,44 @@ Docker image configured for <a href="https://roadrunner.dev/">roadrunner</a> in 
 
 ## Docker images
 
-* `spacetabio/roadrunner-alpine:7.4-base-1.2.0` – Simple image with PHP and pre-installed extensions. <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.2.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.2.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.0-base-1.3.0` – Simple image with PHP and pre-installed extensions. <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.3.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-1.3.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:7.4-base-1.4.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.4.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.4.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.0-base-1.4.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.4.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-1.4.0?style=flat-square)
 
 With xdebug:
 
-* `spacetabio/roadrunner-alpine:7.4-base-xdebug-1.2.0` – Simple image with PHP and pre-installed extensions. <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.2.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-xdebug-1.2.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.0-base-xdebug-1.3.0` – Simple image with PHP and pre-installed extensions. <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.3.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-xdebug-1.3.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:7.4-base-xdebug-1.4.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.4.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-xdebug-1.4.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.0-base-xdebug-1.4.0` – Simple image with PHP and pre-installed extensions. <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.4.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-xdebug-1.4.0?style=flat-square)
 
 ## Basic usage
 
+Roadrunner:
+
 ```Dockerfile
-FROM spacetabio/roadrunner-alpine:8.0-base-1.3.0
+FROM spacetabio/roadrunner-alpine:8.0-base-1.4.0
 
 COPY . /app
 
 # rr is pre installed but config should be provided by application. 
-CMD ["rr serve", "-c", ".rr.yaml"]
+CMD ["rr", "serve", "-c", ".rr.yaml"]
+```
+
+Spiral:
+
+```Dockerfile
+FROM spacetabio/roadrunner-alpine:8.0-spiral-1.4.0
+
+COPY . /app
+
+# rr is pre installed but config should be provided by application. 
+CMD ["spiral", "serve", "-c", ".rr.yaml"]
 ```
 
 ## Extensions
@@ -86,7 +99,8 @@ ENV PHP_OPCACHE_FILE_CACHE_ONLY=1
 Format: `{phpVersion}-{imageType}-{semverImageVersion}`
 
 Map:
- - Image tag `*-1.3.0` contains RoadRunner `2.3.3`. 
+ - Image tag `*-1.4.0` contains RoadRunner `2.3.3` and Spiral binary (in separate images).
+ - Image tag `*-1.3.0` contains RoadRunner `2.3.3`.
  - Image tag `*-1.2.0` contains RoadRunner `1.8.1`. 
  - Image tag `*-1.1.0` contains RoadRunner `1.8.0`.
  - Image tag `*-1.0.0` contains RoadRunner `1.8.0`. 
@@ -102,7 +116,7 @@ make PUSH=true VERSION=latest base80
 
 ## Changelog
 
-* [Base docker image](base/CHANGELOG.md)
+* [link](CHANGELOG.md)
 
 ## License
 
