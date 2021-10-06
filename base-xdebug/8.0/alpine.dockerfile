@@ -13,7 +13,7 @@ RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg li
     && docker-php-ext-enable xdebug \
 	&& apk del build-dependencies
 
-ENV ROADRUNNER_VERSION=2.3.3
+ENV ROADRUNNER_VERSION=2.4.2
 RUN wget -O rr.tar.gz "https://github.com/spiral/roadrunner-binary/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \

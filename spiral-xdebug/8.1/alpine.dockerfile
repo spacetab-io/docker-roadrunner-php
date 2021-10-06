@@ -1,21 +1,24 @@
-FROM php:8.0-cli-alpine AS build
+FROM php:8.1-rc-cli-alpine AS build
 
-RUN apk add --update --no-cache pcre icu yaml libuv libpq libpng libjpeg libexif libzip \
+RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg libexif libzip \
     && apk add --update --no-cache --virtual build-dependencies \
        autoconf g++ libtool pcre make icu-dev postgresql-dev \
 	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev libexif-dev libpng-dev libzip-dev \
 	&& docker-php-ext-configure gd --with-jpeg \
 	&& docker-php-ext-configure opcache --enable-opcache \
 	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip \
-    && pecl install yaml \
-    && docker-php-ext-enable yaml \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
 	&& apk del build-dependencies
 
-ENV ROADRUNNER_VERSION=2.4.2
-RUN wget -O rr.tar.gz "https://github.com/spiral/roadrunner-binary/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
-    && tar -xzf rr.tar.gz \
-    && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \
-    && chmod +x /usr/local/bin/rr
+#    && pecl install yaml \
+#    && docker-php-ext-enable yaml \
+
+ENV ROADRUNNER_VERSION=2.7.0
+RUN wget -O spiral.tar.gz "https://github.com/spiral/framework/releases/download/v${ROADRUNNER_VERSION}/spiral-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
+    && tar -xzf spiral.tar.gz \
+    && mv "spiral-${ROADRUNNER_VERSION}-linux-amd64/spiral" /usr/local/bin/spiral \
+    && chmod +x /usr/local/bin/spiral
 
 ENV PHP_MEMORY_LIMIT=-1
 ENV PHP_MAX_EXECUTION_TIME=0
@@ -45,7 +48,7 @@ ENV PHP_OPCACHE_ENABLE_FILE_OVERRIDE=1
 ENV PHP_OPCACHE_FILE_CACHE_ONLY=1
 
 COPY --from=roquie/smalte:latest-alpine /app/smalte /usr/local/bin/smalte
-COPY base/8.0/php.ini.tmpl /usr/local/etc/php/php.ini.tmpl
+COPY base/8.1/php.ini.tmpl /usr/local/etc/php/php.ini.tmpl
 COPY configure.sh /
 
 EXPOSE 8080
