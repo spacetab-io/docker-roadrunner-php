@@ -6,7 +6,7 @@ RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg li
 	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev libexif-dev libpng-dev libzip-dev \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
 	&& docker-php-ext-configure opcache --enable-opcache \
-	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip \
+	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip bcmath \
     && pecl install yaml \
     && docker-php-ext-enable yaml \
     && pecl install xdebug \
