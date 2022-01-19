@@ -1,4 +1,4 @@
-FROM php:8.1-rc-cli-alpine AS build
+FROM php:8.1-cli-alpine AS build
 
 RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg libexif libzip freetype \
     && apk add --update --no-cache --virtual build-dependencies \
@@ -14,10 +14,10 @@ RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg li
 #    && pecl install yaml \
 #    && docker-php-ext-enable yaml \
 
-ENV ROADRUNNER_VERSION=2.7.0
-RUN wget -O spiral.tar.gz "https://github.com/spiral/framework/releases/download/v${ROADRUNNER_VERSION}/spiral-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
+ENV SPIRAL_BINARY_VERSION=2.7.0
+RUN wget -O spiral.tar.gz "https://github.com/spiral/framework/releases/download/v${SPIRAL_BINARY_VERSION}/spiral-${SPIRAL_BINARY_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf spiral.tar.gz \
-    && mv "spiral-${ROADRUNNER_VERSION}-linux-amd64/spiral" /usr/local/bin/spiral \
+    && mv "spiral-${SPIRAL_BINARY_VERSION}-linux-amd64/spiral" /usr/local/bin/spiral \
     && chmod +x /usr/local/bin/spiral
 
 ENV PHP_MEMORY_LIMIT=-1

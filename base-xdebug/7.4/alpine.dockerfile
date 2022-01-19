@@ -13,8 +13,8 @@ RUN apk add --update --no-cache bash pcre icu yaml libuv libpq libpng libjpeg li
     && docker-php-ext-enable xdebug \
 	&& apk del build-dependencies
 
-ENV ROADRUNNER_VERSION=1.8.1
-RUN wget -O rr.tar.gz "https://github.com/spiral/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
+ENV ROADRUNNER_VERSION=2.7.3
+RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \
     && chmod +x /usr/local/bin/rr

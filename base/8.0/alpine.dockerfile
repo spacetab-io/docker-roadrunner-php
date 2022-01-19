@@ -11,8 +11,8 @@ RUN apk add --update --no-cache pcre icu yaml libuv libpq libpng libjpeg libexif
     && docker-php-ext-enable yaml \
 	&& apk del build-dependencies
 
-ENV ROADRUNNER_VERSION=2.5.6
-RUN wget -O rr.tar.gz "https://github.com/spiral/roadrunner-binary/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
+ENV ROADRUNNER_VERSION=2.7.3
+RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \
     && chmod +x /usr/local/bin/rr

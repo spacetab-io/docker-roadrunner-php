@@ -1,4 +1,4 @@
-FROM php:8.1-rc-cli-alpine AS build
+FROM php:8.1-cli-alpine AS build
 
 RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg libexif libzip freetype \
     && apk add --update --no-cache --virtual build-dependencies \
@@ -14,8 +14,8 @@ RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg li
 #    && pecl install yaml \
 #    && docker-php-ext-enable yaml \
 
-ENV ROADRUNNER_VERSION=2.5.6
-RUN wget -O rr.tar.gz "https://github.com/spiral/roadrunner-binary/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
+ENV ROADRUNNER_VERSION=2.7.3
+RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \
     && chmod +x /usr/local/bin/rr
