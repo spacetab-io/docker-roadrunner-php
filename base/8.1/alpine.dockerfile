@@ -3,16 +3,18 @@ FROM php:8.1-cli-alpine AS build
 RUN apk add --update --no-cache pcre icu yaml libuv libpq libpng libjpeg libexif libzip freetype \
     && apk add --update --no-cache --virtual build-dependencies \
        autoconf g++ libtool pcre make icu-dev postgresql-dev \
-	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev libexif-dev libpng-dev libzip-dev \
+	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev \
+       libexif-dev libpng-dev libzip-dev ${PHPIZE_DEPS} \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
 	&& docker-php-ext-configure opcache --enable-opcache \
 	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip bcmath \
-	&& apk del build-dependencies
+    && pecl install yaml \
+    && docker-php-ext-enable yaml \
+    && pecl install grpc \
+    && docker-php-ext-enable grpc \
+    && apk del build-dependencies ${PHPIZE_DEPS}
 
-#    && pecl install yaml \
-#    && docker-php-ext-enable yaml \
-
-ENV ROADRUNNER_VERSION=2.7.3
+ENV ROADRUNNER_VERSION=2.11.4
 RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \

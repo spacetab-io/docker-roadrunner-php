@@ -14,7 +14,7 @@ RUN apk add --update --no-cache bash pcre icu yaml libpq libuv libpng libjpeg li
 #    && pecl install yaml \
 #    && docker-php-ext-enable yaml \
 
-ENV ROADRUNNER_VERSION=2.7.3
+ENV ROADRUNNER_VERSION=2.11.4
 RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \

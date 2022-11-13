@@ -1,6 +1,6 @@
 alpine-spiral80: NAME = spacetabio/roadrunner-alpine:8.0-spiral
 alpine-spiral80:
-	docker build -f "spiral/8.0/alpine.dockerfile" -t $(NAME)-$(VERSION) .
+	docker build --platform=linux/amd64 -f "spiral/8.0/alpine.dockerfile" -t $(NAME)-$(VERSION) .
 	@if [ "${PUSH}" == 'true' ]; then \
 	    docker push $(NAME)-$(VERSION) ; \
 	fi
