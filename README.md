@@ -19,7 +19,7 @@ Simple image with PHP, RoadRunner and pre-installed extensions:
 * `spacetabio/roadrunner-alpine:8.1-base-1.9.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
-* DEPRECATED:
+* DEPRECATED**:
 * `spacetabio/roadrunner-alpine:7.4-spiral-1.8.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
@@ -41,7 +41,7 @@ With xdebug:
 * `spacetabio/roadrunner-alpine:8.1-base-xdebug-1.9.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-xdebug-1.9.0?style=flat-square)
-* DEPRECATED:
+* DEPRECATED**:
 * `spacetabio/roadrunner-alpine:7.4-spiral-xdebug-1.8.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-xdebug-1.8.0?style=flat-square)
@@ -68,11 +68,11 @@ CMD ["rr", "serve", "-c", ".rr.yaml"]
 Spiral Framework (<= v2.8):
 
 ```Dockerfile
-FROM spacetabio/roadrunner-alpine:8.1-spiral-1.9.0
+FROM spacetabio/roadrunner-alpine:8.1-spiral-1.8.0
 
 COPY . /app
 
-# rr is pre installed but config should be provided by application. 
+# spiral is pre installed but config should be provided by application. 
 CMD ["spiral", "serve", "-c", ".rr.yaml"]
 ```
 
@@ -150,6 +150,10 @@ Shell `bin/bash` is required.
 # make PUSH=true VERSION=latest base80
 make PUSH=true VERSION=latest base81
 ```
+
+## Notes
+
+\*\*new version of spiral framework now using roadrunner binary (`rr`), `spiral` binary using only for SF 2.* and now deprecated because SF 3.* released.
 
 ## Changelog
 
