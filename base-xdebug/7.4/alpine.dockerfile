@@ -1,17 +1,11 @@
 FROM php:7.4-cli-alpine AS build
 
-RUN apk add --update --no-cache bash pcre icu yaml libuv libpq libpng libjpeg libexif libzip freetype \
-    && apk add --update --no-cache --virtual build-dependencies \
-       autoconf g++ libtool pcre make icu-dev postgresql-dev \
-	   postgresql-libs libsasl db yaml-dev libuv-dev freetype-dev libjpeg-turbo-dev jpeg-dev libexif-dev libpng-dev libzip-dev \
-	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-	&& docker-php-ext-configure opcache --enable-opcache \
-	&& docker-php-ext-install -j $(nproc) pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip bcmath \
-    && pecl install yaml \
-    && docker-php-ext-enable yaml \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
-	&& apk del build-dependencies
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/install-php-extensions  \
+    && install-php-extensions gd yaml grpc opcache pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip bcmath event xdebug
+
+RUN apk add --update --no-cache make
 
 ENV ROADRUNNER_VERSION=2.11.4
 RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
