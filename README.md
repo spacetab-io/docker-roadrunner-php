@@ -10,53 +10,22 @@ Docker image configured for <a href="https://roadrunner.dev/">roadrunner</a> in 
 
 Simple image with PHP, RoadRunner and pre-installed extensions:
 
-* `spacetabio/roadrunner-alpine:8.0-base-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-1.9.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.1-base-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
-
-### DEPRECATED**:
-
-* `spacetabio/roadrunner-alpine:7.4-base-1.9.0` <br>
-  ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
-  ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
-
-
-* `spacetabio/roadrunner-alpine:7.4-spiral-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.0-spiral-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-spiral-1.8.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.1-spiral-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-spiral-1.8.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.0-base-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-1.10.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.1-base-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
 
 With xdebug:
 
-* `spacetabio/roadrunner-alpine:7.4-base-xdebug-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-xdebug-1.9.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.0-base-xdebug-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-xdebug-1.9.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.1-base-xdebug-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-xdebug-1.9.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.0-base-xdebug-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-xdebug-1.10.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.1-base-xdebug-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-xdebug-1.10.0?style=flat-square)
 
-### DEPRECATED**:
-
-* `spacetabio/roadrunner-alpine:7.4-spiral-xdebug-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-xdebug-1.8.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.0-spiral-xdebug-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-spiral-xdebug-1.8.0?style=flat-square)
-* `spacetabio/roadrunner-alpine:8.1-spiral-xdebug-1.8.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-spiral-1.8.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-spiral-xdebug-1.8.0?style=flat-square)
 
 ## Basic usage
 
@@ -69,17 +38,6 @@ COPY . /app
 
 # rr is pre installed but config should be provided by application. 
 CMD ["rr", "serve", "-c", ".rr.yaml"]
-```
-
-Spiral Framework (<= v2.8, deprecated):
-
-```Dockerfile
-FROM spacetabio/roadrunner-alpine:8.1-spiral-1.8.0
-
-COPY . /app
-
-# spiral is pre installed but config should be provided by application. 
-CMD ["spiral", "serve", "-c", ".rr.yaml"]
 ```
 
 ## Extensions
