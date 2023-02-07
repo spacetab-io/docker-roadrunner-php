@@ -10,16 +10,20 @@ Docker image configured for <a href="https://roadrunner.dev/">roadrunner</a> in 
 
 Simple image with PHP, RoadRunner and pre-installed extensions:
 
-* `spacetabio/roadrunner-alpine:7.4-base-1.9.0` <br>
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
 * `spacetabio/roadrunner-alpine:8.0-base-1.9.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.0-base-1.9.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.0-base-1.9.0?style=flat-square)
 * `spacetabio/roadrunner-alpine:8.1-base-1.9.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
-* DEPRECATED**:
+
+### DEPRECATED**:
+
+* `spacetabio/roadrunner-alpine:7.4-base-1.9.0` <br>
+  ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
+  ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-base-1.9.0?style=flat-square)
+
+
 * `spacetabio/roadrunner-alpine:7.4-spiral-1.8.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
@@ -41,7 +45,9 @@ With xdebug:
 * `spacetabio/roadrunner-alpine:8.1-base-xdebug-1.9.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.9.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-xdebug-1.9.0?style=flat-square)
-* DEPRECATED**:
+
+### DEPRECATED**:
+
 * `spacetabio/roadrunner-alpine:7.4-spiral-xdebug-1.8.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/7.4-spiral-1.8.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/7.4-spiral-xdebug-1.8.0?style=flat-square)
@@ -57,7 +63,7 @@ With xdebug:
 Roadrunner:
 
 ```Dockerfile
-FROM spacetabio/roadrunner-alpine:8.1-base-1.9.0
+FROM spacetabio/roadrunner-alpine:8.1-base-1.10.0
 
 COPY . /app
 
@@ -65,7 +71,7 @@ COPY . /app
 CMD ["rr", "serve", "-c", ".rr.yaml"]
 ```
 
-Spiral Framework (<= v2.8):
+Spiral Framework (<= v2.8, deprecated):
 
 ```Dockerfile
 FROM spacetabio/roadrunner-alpine:8.1-spiral-1.8.0
@@ -130,15 +136,16 @@ ENV PHP_OPCACHE_FILE_CACHE_ONLY=1
 Format: `{phpVersion}-{imageType}-{semverImageVersion}`
 
 Map:
- - Image tag `*-1.9.0+` contains RoadRunner `2.11.4`
- - Image tag `*-1.8.0+` contains RoadRunner `2.7.3` and Spiral binary (in separate images).
- - Image tag `*-1.7.0+` contains RoadRunner `2.5.6` and Spiral binary (in separate images).
- - Image tag `*-1.6.0+` contains RoadRunner `2.4.2` and Spiral binary (in separate images).
- - Image tag `*-1.5.0+` contains RoadRunner `2.3.3` and Spiral binary (in separate images).
- - Image tag `*-1.4.0+` contains RoadRunner `2.3.3` and Spiral binary (in separate images).
- - Image tag `*-1.3.0` contains RoadRunner `2.3.3`.
- - Image tag `*-1.2.0` contains RoadRunner `1.8.1`. 
- - Image tag `*-1.1.0` contains RoadRunner `1.9.0`.
+ - Image tag `*-1.10.*` contains RoadRunner `2.12.2`
+ - Image tag `*-1.9.*` contains RoadRunner `2.11.4`
+ - Image tag `*-1.8.*` contains RoadRunner `2.7.3` and Spiral binary (in separate images).
+ - Image tag `*-1.7.*` contains RoadRunner `2.5.6` and Spiral binary (in separate images).
+ - Image tag `*-1.6.*` contains RoadRunner `2.4.2` and Spiral binary (in separate images).
+ - Image tag `*-1.5.*` contains RoadRunner `2.3.3` and Spiral binary (in separate images).
+ - Image tag `*-1.4.*` contains RoadRunner `2.3.3` and Spiral binary (in separate images).
+ - Image tag `*-1.3.*` contains RoadRunner `2.3.3`.
+ - Image tag `*-1.2.*` contains RoadRunner `1.8.1`. 
+ - Image tag `*-1.1.*` contains RoadRunner `1.9.0`.
  - Image tag `*-1.0.0` contains RoadRunner `1.9.0`. 
 
 ## Build and push to docker hub
@@ -163,7 +170,7 @@ make PUSH=true VERSION=latest base81
 
 The MIT License
 
-Copyright © 2022 spacetab.io, Inc. https://spacetab.io
+Copyright © 2023 spacetab.io, Inc. https://spacetab.io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

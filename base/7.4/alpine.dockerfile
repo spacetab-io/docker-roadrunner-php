@@ -5,9 +5,9 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions  \
     && install-php-extensions gd yaml grpc opcache pcntl opcache intl gd pdo_mysql pdo_pgsql sockets exif zip bcmath event
 
-RUN apk add --update --no-cache make
+RUN apk add --update --no-cache make pcre
 
-ENV ROADRUNNER_VERSION=2.11.4
+ENV ROADRUNNER_VERSION=2.12.2
 RUN wget -O rr.tar.gz "https://github.com/roadrunner-server/roadrunner/releases/download/v${ROADRUNNER_VERSION}/roadrunner-${ROADRUNNER_VERSION}-linux-amd64.tar.gz" \
     && tar -xzf rr.tar.gz \
     && mv "roadrunner-${ROADRUNNER_VERSION}-linux-amd64/rr" /usr/local/bin/rr \
