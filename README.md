@@ -16,6 +16,9 @@ Simple image with PHP, RoadRunner and pre-installed extensions:
 * `spacetabio/roadrunner-alpine:8.1-base-1.10.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.2-base-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.2-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.2-base-1.10.0?style=flat-square)
 
 With xdebug:
 
@@ -25,6 +28,9 @@ With xdebug:
 * `spacetabio/roadrunner-alpine:8.1-base-xdebug-1.10.0` <br>
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.1-base-1.10.0?style=flat-square)
 ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.1-base-xdebug-1.10.0?style=flat-square)
+* `spacetabio/roadrunner-alpine:8.2-base-xdebug-1.10.0` <br>
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spacetabio/roadrunner-alpine/8.2-base-1.10.0?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/spacetabio/roadrunner-alpine/8.2-base-xdebug-1.10.0?style=flat-square)
 
 
 ## Basic usage
@@ -113,12 +119,9 @@ Shell `bin/bash` is required.
 ```bash
 # make PUSH=true VERSION=latest base74
 # make PUSH=true VERSION=latest base80
-make PUSH=true VERSION=latest base81
+# make PUSH=true VERSION=latest base81
+make PUSH=true VERSION=latest base82
 ```
-
-## Notes
-
-\*\*new version of spiral framework now using roadrunner binary (`rr`), `spiral` binary using only for SF 2.* and now deprecated because SF 3.* released.
 
 ## Changelog
 
